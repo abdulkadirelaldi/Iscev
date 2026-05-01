@@ -1,0 +1,40 @@
+# ─── Bağımlılıklar ───────────────────────────────────────────────────────────
+node_modules/
+**/node_modules/
+
+# ─── Ortam Değişkenleri (ASLA commit'leme) ───────────────────────────────────
+.env
+.env.local
+.env.production
+.env.*.local
+**/.env
+**/.env.local
+
+# ─── Yüklenen Dosyalar (veritabanında yolu saklanıyor, dosyalar sunucuda) ─────
+backend/uploads/
+
+# ─── Frontend Build Çıktısı ───────────────────────────────────────────────────
+frontend/dist/
+frontend/.vite/
+
+# ─── Log Dosyaları ───────────────────────────────────────────────────────────
+logs/
+backend/logs/
+*.log
+npm-debug.log*
+
+# ─── macOS ───────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# ─── Editor ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ─── Test / Coverage ─────────────────────────────────────────────────────────
+coverage/

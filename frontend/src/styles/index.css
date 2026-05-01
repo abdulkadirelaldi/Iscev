@@ -1,0 +1,148 @@
+/* ─── Tailwind Directives ─────────────────────────────────────────────────── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Gilroy Font Family ──────────────────────────────────────────────────── */
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("/fonts/Gilroy-Heavy.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Base Resets & Globals ───────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-gilroy bg-white text-gray-800;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-gilroy font-bold text-iscev-navy leading-tight;
+  }
+
+  a {
+    @apply transition-colors duration-200;
+    text-decoration: none;
+  }
+
+  img, video {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Leaflet harita kapsayıcısı için z-index sıfırlama */
+  .leaflet-container {
+    z-index: 0;
+  }
+}
+
+/* ─── Reusable Component Utilities ───────────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+           bg-iscev-navy text-white font-gilroy font-semibold
+           px-6 py-3 rounded-lg
+           hover:bg-iscev-blue
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-iscev-blue focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+           border-2 border-iscev-navy text-iscev-navy font-gilroy font-semibold
+           px-6 py-3 rounded-lg
+           hover:bg-iscev-navy hover:text-white
+           transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-iscev-navy focus:ring-offset-2;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-gilroy font-bold text-iscev-navy;
+  }
+
+  .section-subtitle {
+    @apply text-lg font-gilroy font-medium text-iscev-blue;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-gray-100
+           hover:shadow-md transition-shadow duration-300;
+  }
+
+  .container-iscev {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
